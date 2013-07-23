@@ -208,7 +208,7 @@
 		<div class="section-header">
 			<!-- start: Container -->
 			<div class="container">
-				<h3><i class="glyphicons-icon coins"></i>現在的優惠活動，還有48個名額！</h3>
+				<h3><i class="glyphicons-icon coins"></i>現在有優惠活動！</h3>
 			</div>
 			<!-- end: Container -->
 		</div>
@@ -245,7 +245,7 @@
                     </ul>
 
                     <ul class="best-option" style="top:-9px;">
-                        <li class="header"><span>Hot<br></span>剩下<i style="font-size:2.5em;">48</i>個名額</li>
+                        <li class="header"><span>Hot<br></span>剩下<i id="lastCount" style="font-size:2.5em;color: #ff9126;">48</i>個名額</li>
                         <li class="price">$5,000 / 人</li>
                         <li></li>
                         <li class="select"><a class="btn btn-large btn-info" href="http://140.92.88.88/confRegister/baoming.jsp?id=AD003" target="_blank">馬上報名</a></li>
@@ -641,21 +641,15 @@
 <!-- end: Java Script -->
 
 <script>
-        $.ajax({
-            type: "GET",
-            url: 'http://140.92.88.88/confRegister/lastPeople.jsp?id=AD003',
-            success: function( response ) {
-            	alert("OK");
-                if (response.success === true) {
-                    if (response.sessions !== 0)
-                      progress = response.views/response.sessions*100;
-                    s = parseInt(progress).toString()+"%";
-
-                    me.html(s);
-                    $("[data-progressbar-for='"+name+"']").css('width', s)
-                }
-            },
-        });
+jQuery(document).ready(function($) {
+    $.ajax({
+        type: "GET",
+        url: 'http://www.android-day.com/api/index.json',
+        success: function( response ) {
+            $('#lastCount').html(response.counts);
+        },
+    });
+});
 </script>
 </body>
 </html>
