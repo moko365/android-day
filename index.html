@@ -201,6 +201,71 @@
 	</section>
 	<!-- end: Section Home -->
 
+	<!-- start: Section Price -->
+	<section id="price">
+		<!-- start: Section Header -->
+		<div class="section-header">
+			<!-- start: Container -->
+			<div class="container">
+				<h3><i class="glyphicons-icon coins"></i>現在的優惠活動，還有48個名額！</h3>
+			</div>
+			<!-- end: Container -->
+		</div>
+		<!-- end: Section Header -->
+		<div class="container">
+
+
+            <span class="visible-phone" style="text-align:center">
+                <img src="img/Swipe_Left.png" class="img-retina" alt="swipe">
+                or
+                <img src="img/Swipe_Right.png" class="img-retina" alt="swipe">
+                <br>
+                try to swipe this table to the left and next to the right
+            </span>
+
+
+            <!-- start: New Type Table -->
+            <div class="price-table-overlay">
+
+                <div class="price-table four">
+
+                    <ul>
+                        <li class="header">原價</li>
+                        <li class="price">$7,000 / 人</li>
+                        <li></li>
+                        <li class="select"><a class="btn btn-info" href="http://140.92.88.88/confRegister/baoming.jsp?id=AD003" target="_blank">馬上報名</a></li>
+                    </ul>
+
+                    <ul>
+                        <li class="header">早鳥價</li>
+                        <li class="price">$6,000 / 人</li>
+                        <li></li>
+                        <li class="select"><a class="btn btn-info" href="http://140.92.88.88/confRegister/baoming.jsp?id=AD003" target="_blank">馬上報名</a></li>
+                    </ul>
+
+                    <ul class="best-option" style="top:-9px;">
+                        <li class="header"><span>Hot<br></span>剩下<i style="font-size:2.5em;">48</i>個名額</li>
+                        <li class="price">$5,000 / 人</li>
+                        <li></li>
+                        <li class="select"><a class="btn btn-large btn-info" href="http://140.92.88.88/confRegister/baoming.jsp?id=AD003" target="_blank">馬上報名</a></li>
+                    </ul>
+
+                    <ul>
+                        <li class="header">三人以上團報</li>
+                        <li class="price">$5,500 / 人</li>
+                        <li></li>
+                        <li class="select"><a class="btn btn-info" href="http://140.92.88.88/confRegister/baoming.jsp?id=AD003" target="_blank">馬上報名</a></li>
+                    </ul>
+
+                </div>
+
+            </div>
+            <!-- end: New Type Table -->
+
+        </div>
+	</section>
+	<!-- end: Section Price -->
+
 	<!-- start: Section About -->
 	<section id="about">
 
@@ -574,5 +639,22 @@
 <script defer="defer" src="js/custom.js"></script>
 <!-- end: Java Script -->
 
+<script>
+        $.ajax({
+            type: "GET",
+            url: 'http://140.92.88.88/confRegister/lastPeople.jsp?id=AD003',
+            success: function( response ) {
+            	alert("OK");
+                if (response.success === true) {
+                    if (response.sessions !== 0)
+                      progress = response.views/response.sessions*100;
+                    s = parseInt(progress).toString()+"%";
+
+                    me.html(s);
+                    $("[data-progressbar-for='"+name+"']").css('width', s)
+                }
+            },
+        });
+</script>
 </body>
 </html>
