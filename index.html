@@ -4,10 +4,9 @@
 
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Android Day 2013</title>
+	<title>Startup Engineering | MokoVersity</title>
 
-	<link rel="shortcut icon" href="http://ad.mokoid.com/favicon.ico" />
-	<meta name="description" content="Android Day 2013 - 年度主題：Open Innovation。 Android 是站在“開放軟體”的肩膀上成長茁壯的，如今帶起開放硬體（Open Hardware)、Open UI、Open Design 等議題也成為世界潮流，當彼此結合串連，勢將匯聚成改變世界的一股新勢力"/>
+	<meta name="description" content=""/>
 	<meta name="keywords" content="" />
 	<meta name="author" content="Moko365 Inc."/>
 	<!-- end: Meta -->
@@ -17,11 +16,11 @@
 	<!-- end: Mobile Specific -->
 
 	<!-- start: Facebook Open Graph -->
-	<meta property="og:title" content="Android Day"/>
-	<meta property="og:description" content="Android Day 2013 - 年度主題：Open Innovation。 Android 是站在“開放軟體”的肩膀上成長茁壯的，如今帶起開放硬體（Open Hardware)、Open UI、Open Design 等議題也成為世界潮流，當彼此結合串連，勢將匯聚成改變世界的一股新勢力"/>
+	<meta property="og:title" content="Start Engineering"/>
+	<meta property="og:description" content=""/>
 	<meta property="og:type" content="website"/>
-	<meta property="og:url" content="http://www.android-day.com"/>
-	<meta property="og:image" content="http://www.android-day.com/img/android-day-banner.jpg"/>
+	<meta property="og:url" content="http://www.mokoversity.com/startup"/>
+	<meta property="og:image" content=""/>
 	<!-- end: Facebook Open Graph -->
 
     <!-- start: CSS -->
@@ -46,7 +45,7 @@
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
-	<link rel="shortcut icon" href="http://ad.mokoid.com/favicon.ico" />
+	<link rel="shortcut icon" href="favicon.ico" />
 	<!-- end: Favicon and Touch Icons -->
 
 </head>
@@ -245,7 +244,7 @@
                     </ul>
 
                     <ul class="best-option" style="top:-9px;">
-                        <li class="header"><span>Hot<br></span>剩下<i id="lastCount" style="font-size:2.5em;color: #ff9126;">48</i>個名額</li>
+                        <li class="header"><span>Hot<br></span>剩下<i id="lastCount" style="font-size:2.5em;color: #ff9126;"></i>個名額</li>
                         <li class="price">$5,000 / 人</li>
                         <li></li>
                         <li class="select"><a class="btn btn-large btn-info" href="http://140.92.88.88/confRegister/baoming.jsp?id=AD003" target="_blank">馬上報名</a></li>
@@ -664,7 +663,7 @@
 jQuery(document).ready(function($) {
     $.ajax({
         type: "GET",
-        url: 'http://www.android-day.com/api/index.json',
+        url: '/api/index.json',
         success: function( response ) {
             $('#lastCount').html(response.counts);
         },
