@@ -664,7 +664,7 @@
 jQuery(document).ready(function($) {
     $.ajax({
         type: "GET",
-        url: 'http://www.android-day.com/api/index.json',
+        url: '/api/index.json',
         success: function( response ) {
             $('#lastCount').html(response.counts);
         },
